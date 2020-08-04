@@ -37,19 +37,17 @@ function pinMatcher(){
         let typed_int = eval(document.getElementById("displayNumber").value);
         console.log(typed_int);               
         if(pin === typed_int){
-            console.log("yahoo");
             document.getElementById("right").style.display = "block";
+            document.getElementById("wrong").style.display = "none";
+            pin_try_count = 3;
+            document.getElementById("try-count").innerHTML = pin_try_count;
         }
         else{
+            document.getElementById("right").style.display = "none";
             document.getElementById("wrong").style.display = "block";
             document.getElementById("try").style.display = "block";
             pin_try_count--;
             document.getElementById("try-count").innerHTML = pin_try_count;                    
         }  
-     }
-     else{
-         document.getElementById("try").style.display = "none";
-         document.getElementById("submit").style.display = "none";
-         document.getElementById("no-more").style.display = "block";
-     }
+    }
 }
